@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Loading } from '../components';
 
 export const Home = () => {
@@ -21,6 +22,29 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>{isLoading ? <Loading /> : <p>{`Meal: ${meal.strMeal}`}</p>}</div>
+    <div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <img src={meal.strMealThumb} alt={meal.strMeal}></img>
+          <p>{`Meal: ${meal.strMeal}`}</p>
+          <form>
+            <input
+              type="email"
+              name="note"
+              autoComplete="off"
+              required
+              placeholder="insert your email"
+            />
+            <label>use your e-mail to find your order</label>
+            <button>search</button>
+          </form>
+          <button>
+            <Link to="meal">next</Link>
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
