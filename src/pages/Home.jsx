@@ -29,6 +29,7 @@ export const Home = () => {
         <div>
           <img src={meal.strMealThumb} alt={meal.strMeal}></img>
           <p>{`Meal: ${meal.strMeal}`}</p>
+          <button onClick={fetchRandomMeal}>next meal</button>
           <form>
             <input
               type="email"
