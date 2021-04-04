@@ -1,6 +1,6 @@
 import logo from '../../images/logo.svg';
 import React, { useState, useEffect } from 'react';
-import { VscChromeClose, VscListSelection } from 'react-icons/vsc';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 import {
   Nav,
@@ -42,7 +42,7 @@ const Navbar = () => {
               <NavLogoSvg src={logo} alt="Logo" />
             </NavLogo>
             <NavMobileIcon onClick={handleClick}>
-              {click ? <VscChromeClose /> : <VscListSelection />}
+              {click ? <AiOutlineClose /> : <AiOutlineMenu />}
             </NavMobileIcon>
             <NavMenu onClick={handleClick} click={click}>
               <NavItem>
