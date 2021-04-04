@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Loading } from '../components';
+import { Loading, ImageSlider } from '../components';
+import { Container } from '../globalStyles';
 
 export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,30 +23,19 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {isLoading ? (
         <Loading />
       ) : (
+        <>
+        <ImageSlider meal={meal} fetchRandomMeal={fetchRandomMeal}/>
         <div>
-          <img src={meal.strMealThumb} alt={meal.strMeal}></img>
-          <p>{`Meal: ${meal.strMeal}`}</p>
-          <button onClick={fetchRandomMeal}>next meal</button>
-          <form>
-            <input
-              type="email"
-              name="note"
-              autoComplete="off"
-              required
-              placeholder="insert your email"
-            />
-            <label>use your e-mail to find your order</label>
-            <button>search</button>
-          </form>
           <button>
             <Link to="meal">next</Link>
           </button>
         </div>
+        </>
       )}
-    </div>
+    </Container>
   );
 };

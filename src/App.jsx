@@ -4,7 +4,7 @@ import { Meal } from './pages/Meal';
 import { Drink } from './pages/Drink';
 import { Checkout } from './pages/Checkout';
 import { Receipt } from './pages/Receipt';
-import { Footer, Navbar } from './components';
+import { Navbar } from './components';
 import GlobalStyle from './globalStyles';
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
           <Route path="/checkout" exact component={Checkout} />
           <Route path="/receipt" exact component={Receipt} />
         </Switch>
-        <Footer />
       </Router>
     </>
   );

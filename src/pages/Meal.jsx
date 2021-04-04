@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Loading } from '../components';
+import {Image} from "../components/ImageSlider/ImageSlider.elements.js"
+import { Container } from '../globalStyles';
 
 export const Meal = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,13 +24,13 @@ export const Meal = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {isLoading ? (
         <Loading />
       ) : (
         <div>
           <div>
-            <img src={meal.strMealThumb} alt={meal.strMeal}></img>
+            <Image src={meal.strMealThumb} alt={meal.strMeal}></Image>
             <h2>{`Meal: ${meal.strMeal}`}</h2>
             <p>{`Type: ${meal.strCategory}`}</p>
             <p>{`Origin: ${meal.strArea}`}</p>
@@ -40,6 +42,6 @@ export const Meal = () => {
           </button>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
